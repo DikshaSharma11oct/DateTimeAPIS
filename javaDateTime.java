@@ -10,7 +10,7 @@ public class javaDateTime{
 
         System.out.println(yesterday); //in date timeApi time will also come
         System.out.println(nextDay);
-        // for date time API
+        // for date time API you can add comment here
 
 
     }
