@@ -1,9 +1,16 @@
 pipeline{
     agent any
+    environment{
+        VERSION_NAME="1.34"
+
+    }
     stages{
+
+
         stage("compile"){
             steps{
                 sh "javac StringJoiner.java"
+                sh 'echo "${VERSION_NAME}"'
             }
 
         }
@@ -17,15 +24,15 @@ pipeline{
 
     post{
         always{
-            echo "always"
+            sh 'echo "always"'
 
         }
         success{
-            echo "success"
+            sh 'echo "success"'
 
         }
-        // failure{
-        //     echo "failure"
-        // }
+        failure{
+            sh 'echo "failure"'
+        }
     }
 }

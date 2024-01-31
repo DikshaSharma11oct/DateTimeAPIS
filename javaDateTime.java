@@ -9,7 +9,7 @@ public class javaDateTime{
         LocalDateTime nextDay = localDate.plusDays(1);
 
         System.out.println(yesterday); //in date timeApi time will also come
-        System.out.println(nextDay)
+        System.out.println(nextDay);
         // for date time API you can add comment here
 
 
