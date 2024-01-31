@@ -2,10 +2,16 @@ pipeline{
     agent any
     stages{
         stage("compile"){
-            sh "javac StringJoiner.java"
+            steps{
+                sh "javac StringJoiner.java"
+            }
+
         }
         stage("run"){
-            sh "java StringJoiner"
+            steps{
+                sh "java StringJoiner"
+            }
+
         }
     }
 }
