@@ -1,13 +1,21 @@
 pipeline{
     agent any
+    //can add environment and tool like below and later can bind their value in steps
+    tools{
+        maven "maven"
+    }
+
     environment{
         VERSION_NAME="1.34"
 
     }
     stages{
 
-
         stage("compile"){
+           //its a groovy script and can add some condition using when like below
+            when{
+
+            }
             steps{
                 sh "javac StringJoiner.java"
                 sh 'echo "${VERSION_NAME}"'
@@ -21,7 +29,7 @@ pipeline{
 
         }
     }
-
+    //can add some comments after deploying project successfully on jenkins in post
     post{
         always{
             sh 'echo "always"'
