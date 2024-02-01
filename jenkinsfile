@@ -17,14 +17,14 @@ pipeline{
 
             }
             steps{
-                sh "javac StringJoiner.java"
-                sh 'echo "${VERSION_NAME}"'
+                bat "javac StringJoiner.java"
+                bat 'echo "${VERSION_NAME}"'
             }
 
         }
         stage("run"){
             steps{
-                sh "java StringJoiner"
+                bat "java StringJoiner"
             }
 
         }
@@ -32,15 +32,15 @@ pipeline{
     //can add some comments after deploying project successfully on jenkins in post
     post{
         always{
-            sh 'echo "always"'
+            echo "always will print a message"
 
         }
         success{
-            sh 'echo "success"'
+            echo "success msg will print"
 
         }
         failure{
-            sh 'echo "failure"'
+            echo  "failure msg will print"
         }
     }
 }
